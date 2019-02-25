@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>My Movies Page</h1>
+<h2>
+    {% block subtitle %}
+    {% endblock subtitle %}
+</h2>
+    {% block content %}
+        <table>
+            <tr>
+                <th>Movie Title</th>
+                <th>Movie Details</th>
+                <th>Movie Synopsis</th>
+            </tr>
+            {% for movie in allMovies %}
+            <tr>
+                <td>{{ movie.movie_title }}</td>
+                <td><a href="{% url 'details' movie.movie_id %}">{{ movie.movie_details }}</a></td>
+                <td><a href="{% url 'synopsis' movie.movie_id%}"></a>{{ movie.movie_synopsis }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'cwApp/movies.html' %}
+
+{% block subtitle %}{{movie.movie_id}} {% endblock subtitle %}
+
+{% block content %}
+
+    <p>
+        Title: {{movie.movie_title}}
+    </p>
+<p>
+    Details: {{movie.movie_details}}
+</p>
+<p>
+    Synopsis: {{movie.movie_synopsis}}
+</p>
+{% endblock content %}
+<a href="{% url 'movies' %}">Main Page</a>
+<a href="{% url 'movie_synopsis' %}">Synopsis</a>
